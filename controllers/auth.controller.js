@@ -17,10 +17,10 @@ export const login = (req, res) => {
 
     }
 
-
-    res.json({
-        mensaje: resultado.mensaje,
-        usuario: usuario
-    });
+res.json({
+    mensaje: resultado.mensaje,
+    usuario,
+    token: resultado.token
+});
 
 };

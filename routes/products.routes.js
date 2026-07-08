@@ -1,4 +1,4 @@
-
+import { verificarToken } from "../middlewares/auth.middleware.js";
 import express from "express";
 import {
     getProducts,
@@ -9,16 +9,12 @@ import {
 
 const router = express.Router();
 
-// GET todos los productos
-router.get("/", getProducts);
+router.get("/", verificarToken, getProducts);
 
-// GET producto por id
-router.get("/:id", getProductById);
+router.get("/:id", verificarToken, getProductById);
 
-// POST crear producto
-router.post("/create", createProduct);
+router.post("/create", verificarToken, createProduct);
 
-// DELETE eliminar producto
-router.delete("/:id", deleteProduct);
+router.delete("/:id", verificarToken, deleteProduct);
 
 export default router;
