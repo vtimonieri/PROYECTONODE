@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.get("/", verificarToken, getProducts);
+router.get("/",verificarToken, getProducts);
 
 router.get("/:id", verificarToken, getProductById);
 
