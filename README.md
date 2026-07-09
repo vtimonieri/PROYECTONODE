@@ -1,29 +1,220 @@
-"# PROYECTONODE" 
-# Proyecto Final API
+# Proyecto Final - API REST con Node.js, Express, Firestore y JWT
 
-API REST desarrollada con Node.js y Express.
+## Descripci贸n
 
-## Tecnolog韆s
+Este proyecto consiste en el desarrollo de una API REST utilizando **Node.js** y **Express**, implementando una arquitectura en capas, autenticaci贸n mediante **JSON Web Token (JWT)** y almacenamiento de datos en **Firebase Firestore**.
 
-- Node.js
-- Express
-- Firebase Firestore
-- Thunder Client
+La aplicaci贸n permite gestionar productos mediante operaciones CRUD protegidas por autenticaci贸n.
 
-## Instalaci髇
+---
 
-npm install
+# Tecnolog铆as utilizadas
 
-## Ejecuci髇
+* Node.js
+* Express.js
+* Firebase Firestore
+* JSON Web Token (JWT)
+* JavaScript (ES Modules)
+* Git
+* GitHub
+* Vercel
 
-npm start
+---
 
-## Endpoints
+# Arquitectura del proyecto
 
+El proyecto est谩 organizado siguiendo una arquitectura en capas:
+
+* **Routes**
+
+  * Define los endpoints de la API.
+
+* **Controllers**
+
+  * Reciben las solicitudes HTTP y coordinan la l贸gica.
+
+* **Services**
+
+  * Contienen la l贸gica de negocio.
+
+* **Models**
+
+  * Gestionan el acceso a Firestore.
+
+* **Middlewares**
+
+  * Verificaci贸n del token JWT y otras funcionalidades.
+
+---
+
+# Funcionalidades
+
+## Autenticaci贸n
+
+* Login mediante JWT.
+* Generaci贸n de token.
+* Protecci贸n de rutas mediante middleware.
+
+---
+
+## Productos
+
+Operaciones disponibles:
+
+* Obtener todos los productos.
+* Obtener un producto por ID.
+* Crear un producto.
+* Eliminar un producto.
+
+Todas estas operaciones requieren un token v谩lido.
+
+---
+
+# Endpoints
+
+## Login
+
+**POST**
+
+```text
+/auth/login
+```
+
+---
+
+## Productos
+
+Obtener todos
+
+```text
 GET /api/products
+```
 
+Obtener por ID
+
+```text
 GET /api/products/:id
+```
 
+Crear producto
+
+```text
 POST /api/products/create
+```
 
+Eliminar producto
+
+```text
 DELETE /api/products/:id
+```
+
+---
+
+# Despliegue
+
+La API fue desplegada en Vercel.
+
+**URL p煤blica**
+
+```text
+https://proyectonode-owyw9y7z9-vilma-timonieris-projects.vercel.app/
+```
+
+---
+
+# Instalaci贸n
+
+Clonar el repositorio
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
+
+Ingresar al proyecto
+
+```bash
+cd proyecto-final-api
+```
+
+Instalar dependencias
+
+```bash
+npm install
+```
+
+Crear un archivo `.env` con las variables correspondientes.
+
+Ejecutar el servidor
+
+```bash
+npm start
+```
+
+---
+
+# Variables de entorno
+
+El proyecto utiliza un archivo `.env` para almacenar informaci贸n sensible, como:
+
+* SECRET_KEY del JWT.
+* Configuraci贸n de Firebase.
+
+Estas variables no se incluyen en el repositorio por razones de seguridad.
+
+---
+
+# Autenticaci贸n
+
+Para acceder a las rutas protegidas es necesario:
+
+1. Realizar el login.
+2. Obtener el token JWT.
+3. Enviar el token en el encabezado:
+
+```text
+Authorization: Bearer <TOKEN>
+```
+
+---
+
+# Base de datos
+
+La informaci贸n se almacena en **Firebase Firestore**, permitiendo una base de datos NoSQL en la nube.
+
+---
+
+# Pruebas
+
+La API fue probada utilizando Thunder Client verificando:
+
+* Login.
+* Generaci贸n del token.
+* Acceso autorizado.
+* Acceso sin token.
+* Creaci贸n de productos.
+* Consulta de productos.
+* Eliminaci贸n de productos.
+
+---
+
+# Estado del proyecto
+
+Proyecto funcional.
+
+Caracter铆sticas implementadas:
+
+* API REST.
+* Arquitectura en capas.
+* Express.
+* Firestore.
+* JWT.
+* Variables de entorno.
+* Despliegue en Vercel.
+
+---
+
+# Autor
+
+**Vilma Victoria Timonieri**
+
+Proyecto desarrollado como trabajo final de Node.js.
