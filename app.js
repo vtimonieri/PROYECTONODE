@@ -8,13 +8,17 @@ import authRoutes from "./routes/auth.routes.js";
 // Cargar variables de entorno
 dotenv.config();
 
-// Crear la aplicación Express
+// Crear la aplicaciï¿½n Express
 const app = express();
-// Middleware global para permitir peticiones desde otros orígenes
+// Middleware global para permitir peticiones desde otros orï¿½genes
 app.use(cors());
 // Middleware global para interpretar JSON
 app.use(bodyParser.json());
 
+
+app.get("/", (req, res) => {
+  res.json({ mensaje: "API funcionando correctamente" });
+});
 // Rutas de productos
 app.use("/api/products", productsRoutes);
 
